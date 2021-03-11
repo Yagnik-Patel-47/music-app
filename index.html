@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <title>music-app</title>
+</head>
+<body>
+  <section id="library" class="library-style">
+    <h3 class="lib-headline">Library</h3>
+  </section>
+  <section id="player" class="hidden player-style">
+    <div class="cover"><img class="song-cover" src="" alt="Cover Image" /></div>
+    <div class="songInfo">
+      <h5></h5>
+      <p></p>
+    </div>
+    <audio controls autoplay id="songPlayer">
+      <source src="" type="audio/mpeg">
+    </audio>
+    <button id="go-lib">Library</button>
+  </section>
+
+	<script defer type="module" src="js/index.js"></script>
+</body>
+</html>
