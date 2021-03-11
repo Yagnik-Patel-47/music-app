@@ -51,19 +51,27 @@ setTimeout(function() {
 function playerScreen() {
   app.classList.add("backBlur");
   const cover = document.querySelector(".song-cover");
+  cover.addEventListener("load", () => {
+    cover.classList.add("animate");
+  });
   const audio = document.querySelector("audio");
+  const songTitle = document.querySelector(".songInfo h4");
+  const singers = document.querySelector(".songInfo p");
+  songTitle.innerText = needObject.name;
+  singers.innerText = needObject.singers;
   const audioSource = document.querySelector("audio source");
   cover.setAttribute("src", `./assets/covers/${needObject.cover}`);
   audioSource.setAttribute("src", `./assets/${needObject.url}`);
   audio.load();
   body.style.background = `url(./assets/covers/${needObject.cover}) no-repeat center / cover`;
+  setInterval(() => {
+    if (audio.paused) {
+      cover.style.animationPlayState = "paused";
+    } else {
+      cover.style.animationPlayState = "initial";
+    }
+  }, 10);
 }
-
-/*
-musicPlayBtn.addEventListener("click", () => {
-  app.classList.remove("hidden");
-  library.classList.add("hidden");
-});*/
 
 libBtn.addEventListener("click", () => {
   app.classList.add("hidden");
@@ -74,6 +82,7 @@ libBtn.addEventListener("click", () => {
   audio.pause();
   const audioSource = document.querySelector("audio source");
   cover.setAttribute("src", "");
+  cover.classList.remove("animate");
   audioSource.setAttribute("src", "");
   body.style.background = "initial";
 });

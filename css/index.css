@@ -1,7 +1,8 @@
-body,html {
+body, html {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font-family: 'Rubik', sans-serif;
 }
 
 * {
@@ -37,7 +38,7 @@ body,html {
   display: flex;
   align-items: center;
   border-radius: 0.6rem;
-  margin: 1rem 0;
+  margin: 0.6rem 0;
   transition: all 0.4s;
   position: relative;
 }
@@ -47,8 +48,8 @@ body,html {
 }
 
 .songWrapper:hover {
-  transform: scale(1.1);
-  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cover-wrapper {
@@ -76,8 +77,30 @@ body,html {
 .cover {
   width: 15rem;
   height: auto;
-  border-radius: 10%;
+  border-radius: 50%;
   overflow: hidden;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate {
+  animation: spin 15s linear infinite;
+}
+
+nav {
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-between;
 }
 
 .song-cover {
@@ -88,11 +111,31 @@ body,html {
 
 #go-lib {
   margin: 2rem 0;
-  outline: none;
   background: #444;
   padding: 0.6rem 1.2rem;
   border-radius: 0.4rem;
   border: none;
   font-weight: 500;
   color: white;
+  transition: all 0.3s;
+}
+
+#go-lib:hover {
+  background: #333;
+}
+
+#go-lib:focus {
+  outline: none;
+  border: none;
+}
+
+.operable {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+  border-radius: 0.6rem;
+  padding: 1rem;
+  margin: 1rem;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: blur(5px) brightness(0.4);
 }

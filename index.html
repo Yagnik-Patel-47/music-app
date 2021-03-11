@@ -4,21 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="./assets/icons/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <title>music-app</title>
 </head>
 <body>
   <section id="library" class="library-style">
-    <h3 class="lib-headline">Library</h3>
+    <nav>
+      <h3 class="logo">CA~Tunes</h3>
+      <h4 class="lib-headline">Library</h4>
+    </nav>
   </section>
   <section id="player" class="hidden player-style">
     <div class="cover"><img class="song-cover" src="" alt="Cover Image" /></div>
-    <div class="songInfo">
-      <h5></h5>
-      <p></p>
+    <div class="operable">
+      <div class="songInfo">
+        <h4></h4>
+        <p></p>
+      </div>
+      <audio controls autoplay id="songPlayer">
+        <source src="" type="audio/mpeg">
+      </audio>
     </div>
-    <audio controls autoplay id="songPlayer">
-      <source src="" type="audio/mpeg">
-    </audio>
     <button id="go-lib">Library</button>
   </section>
 
