@@ -49,7 +49,6 @@ setTimeout(function() {
 }, 0);
 
 function playerScreen() {
-  app.classList.add("backBlur");
   const cover = document.querySelector(".song-cover");
   cover.addEventListener("load", () => {
     cover.classList.add("animate");
@@ -69,6 +68,11 @@ function playerScreen() {
       cover.style.animationPlayState = "paused";
     } else {
       cover.style.animationPlayState = "initial";
+    }
+    if (audio.currentTime === audio.duration || audio.currentTime === 0) {
+      cover.classList.remove("animate");
+    } else {
+      cover.classList.add("animate");
     }
   }, 10);
 }

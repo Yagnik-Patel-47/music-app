@@ -24,6 +24,9 @@ body, html {
   height: 100%;
   padding: 2rem;
   align-items: center;
+  padding-top: 5vh;
+  backdrop-filter: blur(3px) brightness(0.8);
+  -webkit-backdrop-filter: blur(3px) brightness(0.8);
 }
 
 .backBlur {
@@ -65,6 +68,11 @@ body, html {
   vertical-align: middle;
 }
 
+.cover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 4px 7px rgba(0, 0, 0, 0.2);
+}
+
 .name-wrapper {
   margin: 0 1rem;
 }
@@ -79,6 +87,7 @@ body, html {
   height: auto;
   border-radius: 50%;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 @keyframes spin {
@@ -136,6 +145,11 @@ nav {
   border-radius: 0.6rem;
   padding: 1rem;
   margin: 1rem;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: blur(5px) brightness(0.4);
+  backdrop-filter: blur(5px) brightness(0);
+  -webkit-backdrop-filter: blur(5px) brightness(0);
+}
+
+audio:focus {
+  border: none;
+  outline: none;
 }
