@@ -46,6 +46,13 @@ body, html {
   position: relative;
 }
 
+.library-name {
+  text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 100%;
+}
+
 .hidden {
   display: none;
 }
@@ -127,6 +134,7 @@ nav {
   font-weight: 500;
   color: white;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 #go-lib:hover {
